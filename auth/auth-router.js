@@ -6,6 +6,8 @@ const Users = require('../users/users-model.js');
 const { jwtSecret } = require('../auth/secrets');
 
 // for endpoints beginning with /api/auth
+
+// LandOwners register and login
 router.post('/landowners/register', (req, res) => {
   let user = req.body;
   const hash = bcrypt.hashSync(user.password, 10);
@@ -41,6 +43,7 @@ router.post('/landowners/login', (req, res) => {
     });
 });
 
+// RV Owners login and register
 router.post('/rvowners/register', (req, res) => {
   let user = req.body;
   const hash = bcrypt.hashSync(user.password, 10);

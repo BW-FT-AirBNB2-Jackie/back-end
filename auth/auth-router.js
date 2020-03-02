@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 const router = require('express').Router();
 
 const Users = require('../users/users-model.js');
-const { jwtSecret } = require('../auth/secrets');
 
 // for endpoints beginning with /api/auth
 
@@ -84,11 +83,11 @@ function generateToken(user) {
     id: user.id,
     username: user.username
   };
-
+  const secret = process.env.JWT_SECRET;
   const options = {
     expiresIn: '1d'
   };
-  return jwt.sign(payload, jwtSecret, options);
+  return jwt.sign(payload, secret, options);
 }
 
 module.exports = router;

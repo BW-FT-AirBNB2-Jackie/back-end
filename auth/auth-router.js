@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const router = require('express').Router();
 
-const Users = require('../users/users-model.js');
+const Users = require('../models/users-model.js');
 
 // for endpoints beginning with /api/auth
 

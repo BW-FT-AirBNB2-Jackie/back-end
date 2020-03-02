@@ -5,7 +5,7 @@ const helmet = require('helmet');
 const logger = require('../middleware/logger');
 
 const authRouter = require('../auth/auth-router');
-const usersRouter = require('../users/users.router');
+const usersRouter = require('../routes/users.router');
 const restricted = require('../middleware/authenticate-middleware');
 
 const server = express();

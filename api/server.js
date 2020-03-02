@@ -6,7 +6,7 @@ const logger = require('../middleware/logger');
 
 const authRouter = require('../auth/auth-router');
 const usersRouter = require('../users/users.router');
-const restricted = require('../auth/authenticate-middleware');
+const restricted = require('../middleware/authenticate-middleware');
 
 const server = express();
 

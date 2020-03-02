@@ -3,9 +3,14 @@ exports.seed = function(knex) {
     .del()
     .then(function() {
       return knex('users').insert([
-        { username: 'james hatfield', password: 'metallica' },
-        { username: 'angus young', password: 'acdc' },
-        { username: 'maynard keenan', password: 'tool' }
+        { username: 'test', password: 'test', email: 'test@email.com' },
+        {
+          username: 'james hatfield',
+          password: 'metallica',
+          email: 'jh@email.com'
+        },
+        { username: 'angus young', password: 'acdc', email: 'ay@email.com' },
+        { username: 'maynard keenan', password: 'tool', email: 'mk@email.com' }
       ]);
     });
 };

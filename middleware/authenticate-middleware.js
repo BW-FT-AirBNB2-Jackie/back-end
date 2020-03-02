@@ -1,11 +1,11 @@
 const jwt = require('jsonwebtoken');
-const { jwtSecret } = require('../auth/secrets');
 
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
 
   if (authorization) {
-    jwt.verify(authorization, jwtSecret, (err, decodedToken) => {
+    const secret = process.env.JWT_SECRET;
+    jwt.verify(authorization, secret, (err, decodedToken) => {
       if (err) {
         res.status(401).json({ you: 'shall not pass!' });
       } else {

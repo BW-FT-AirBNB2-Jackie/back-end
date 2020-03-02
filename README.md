@@ -10,8 +10,9 @@
 
 ```
 {
-"username": "donny",
-"password": "pass1"
+"username": "test",
+"password": "test",
+"email": "test@email.com
 }
 ```
 
@@ -20,7 +21,8 @@
 ```
 {
 "id": 4,
-"username": "donny"
+"username": "test"
+"email": "test@email.com
 }
 ```
 
@@ -30,8 +32,9 @@
 
 ```
 {
-"username": "donny",
-"password": "pass1"
+"username": "test",
+"password": "test",
+"email": "test@email.com
 }
 ```
 
@@ -39,7 +42,7 @@
 
 ```
 {
-"message": "Welcome donald",
+"message": "Welcome test",
 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJkb25hbGQiLCJpYXQiOjE1ODMwODM3MzgsImV4cCI6MTU4MzE3MDEzOH0.iGIAi5HxSdNmH8PcgiyIABNV7PU1WrJIDIaaQEvA1S4"
 }
 ```

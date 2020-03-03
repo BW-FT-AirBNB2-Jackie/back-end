@@ -5,6 +5,7 @@ module.exports = {
   find,
   findBy,
   findById,
+  findListings,
   update,
   remove
 };
@@ -39,4 +40,19 @@ function remove(id) {
   return db('landowners')
     .where('id', Number(id))
     .del();
+}
+
+function findListings(id) {
+  return db('listings as l')
+    .select(
+      'l.id',
+      'l.location',
+      'l.description',
+      'l.price',
+      'l.image',
+      'l.start_date',
+      'l.end_date'
+    )
+    .join('landowners as ld', 'ld.id', 'l.landowners_id')
+    .where('l.landowners_id', id);
 }

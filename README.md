@@ -89,19 +89,19 @@ Gets a list of landowners. You probably wont need this but this is the baseURL f
 }
 ```
 
-# DELETE /api/landowners/:id
+## DELETE /api/landowners/:id
 
 ### Deletes the landowner with that id
 
-# GET /api/landowners/:id/listings
+## GET /api/landowners/:id/listings
 
 ### Gets the all the listings
 
-# GET /api/listings/:id
+## GET /api/listings/:id
 
 ### Gets the listing for that id
 
-# POST /api/listings
+## POST /api/listings
 
 ### Lets you create a new listing
 
@@ -119,7 +119,7 @@ Gets a list of landowners. You probably wont need this but this is the baseURL f
 ]
 ```
 
-# PUT /api/listings/:id
+## PUT /api/listings/:id
 
 ### Lets you update a listing with that id
 
@@ -137,6 +137,6 @@ Gets a list of landowners. You probably wont need this but this is the baseURL f
 ]
 ```
 
-# DELETE api/listings/:id
+## DELETE api/listings/:id
 
 ### Lets you delete a listing with that id

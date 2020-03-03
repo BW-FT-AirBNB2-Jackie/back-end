@@ -19,8 +19,8 @@ server.use(express.json());
 server.use(logger);
 
 server.use('/api/auth', authRouter);
-server.use('/api/users', usersRouter);
-server.use('/api/landowners', landownersRouter);
+server.use('/api/users', restricted, usersRouter);
+server.use('/api/landowners', restricted, landownersRouter);
 server.use('/api/listings', listingsRouter);
 
 server.get('/', (req, res) => {

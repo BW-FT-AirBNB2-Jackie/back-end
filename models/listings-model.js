@@ -33,6 +33,6 @@ function update(id, changes) {
 
 function remove(id) {
   return db('listings')
-    .where('id', id)
+    .where({ id })
     .del();
 }

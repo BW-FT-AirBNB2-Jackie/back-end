@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 //GET by id
 router.get('/:id', (req, res) => {
-  Listings.getById
+  Listings.getById(req.params.id)
     .then(listing => {
       if (listing) {
         res.json(listing);
@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
 
   Listings.add(listingData)
     .then(listing => {
-      res.status(201).json(listing, id);
+      res.status(201).json(listing);
     })
     .catch(() => {
       res.status(500).json({ message: 'Failed to create new listing' });
@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   Listings.update(req.params.id, req.body)
     .then(update => {
-      res.status(201).json(update, id);
+      res.status(201).json({ message: 'Listing updated' });
     })
     .catch(() => {
       res.status(500).json({ message: 'failed to update listing' });
@@ -58,7 +58,7 @@ router.put('/:id', (req, res) => {
 
 //DELETE by id
 router.delete('/:id', (req, res) => {
-  Listings.delete(req.params.id)
+  Listings.remove(req.params.id)
     .then(deleted => {
       res.status(200).json({ message: 'listing deleted' });
     })

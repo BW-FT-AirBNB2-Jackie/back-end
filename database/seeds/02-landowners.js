@@ -1,13 +1,25 @@
-
 exports.seed = function(knex) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
+  return knex('landowners')
+    .del()
+    .then(function() {
       // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
+      return knex('landowners').insert([
+        {
+          username: 'harry potter',
+          password: 'pass',
+          email: 'hp@hogwarts.com'
+        },
+        {
+          username: 'ron weasley',
+          password: 'pass1',
+          email: 'rw@hogwarts.com'
+        },
+        {
+          username: 'hermione granger',
+          password: 'pass2',
+          email: 'hg@hogwarts.com'
+        }
       ]);
     });
 };

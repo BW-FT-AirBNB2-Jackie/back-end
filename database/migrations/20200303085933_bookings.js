@@ -1,6 +1,6 @@
 exports.up = function(knex) {
   return knex.schema.createTable('bookings', bookings => {
-    bookings.primary(['users_id', 'listing_id']);
+    bookings.primary(['users_id', 'listings_id']);
 
     bookings
       .integer('users_id')

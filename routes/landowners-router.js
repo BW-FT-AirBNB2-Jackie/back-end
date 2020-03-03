@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
   } else {
     Landowners.findById(id)
       .then(landowner => {
-        res.status(201).json(landowner);
+        res.status(200).json(landowner);
       })
       .catch(err => {
         res.status(500).json({
@@ -42,6 +42,23 @@ router.delete('/:id', (req, res) => {
     })
     .catch(err => {
       res.status(500).json({ message: 'The landowner could not be removed' });
+    });
+});
+
+router.get('/:id/listings', (req, res) => {
+  const { id } = req.params;
+
+  Landowners.findListings(id)
+    .then(listings => {
+      if (listings.length) {
+        res.json(listings);
+      } else {
+        res.status(404).json({ message: 'Could not find listings' });
+      }
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ message: 'Failed to get listings' });
     });
 });
 

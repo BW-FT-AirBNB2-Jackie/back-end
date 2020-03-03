@@ -5,6 +5,7 @@ module.exports = {
   find,
   findBy,
   findById,
+  findListings,
   update,
   remove
 };
@@ -39,4 +40,19 @@ function remove(id) {
   return db('users')
     .where('id', Number(id))
     .del();
+}
+
+function findListings(id) {
+  return db('listings as l')
+    .select(
+      'l.id',
+      'l.location',
+      'l.description',
+      'l.price',
+      'l.image',
+      'l.start_date',
+      'l.end_date'
+    )
+    .join('users as u', 'u.id', 'l.id')
+    .where('l.id', id);
 }

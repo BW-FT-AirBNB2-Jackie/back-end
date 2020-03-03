@@ -45,4 +45,21 @@ router.delete('/:id', (req, res) => {
     });
 });
 
+router.get('/:id/listings', (req, res) => {
+  const { id } = req.params;
+
+  Users.findListings(id)
+    .then(listings => {
+      if (listings.length) {
+        res.json(listings);
+      } else {
+        res.status(404).json({ message: 'Could not find listings' });
+      }
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({ message: 'Failed to get listings' });
+    });
+});
+
 module.exports = router;

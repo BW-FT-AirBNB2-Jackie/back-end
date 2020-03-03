@@ -6,7 +6,7 @@ const router = express.Router();
 
 //Global GET
 router.get('/', (req, res) => {
-  Listings.get()
+  Listings.find()
     .then(listings => {
       res.json(listings);
     })
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 //GET by id
 router.get('/:id', (req, res) => {
-  Listings.getById(req.params.id)
+  Listings.findById(req.params.id)
     .then(listing => {
       if (listing) {
         res.json(listing);

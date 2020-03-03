@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
   } else {
     Landowners.findById(id)
       .then(landowner => {
-        res.status(201).json(landowner);
+        res.status(200).json(landowner);
       })
       .catch(err => {
         res.status(500).json({

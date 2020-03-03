@@ -22,11 +22,9 @@ router.get('/:id', (req, res) => {
         res.status(201).json(landowner);
       })
       .catch(err => {
-        res
-          .status(500)
-          .json({
-            message: 'The landowner information could not be retrieved.'
-          });
+        res.status(500).json({
+          message: 'The landowner information could not be retrieved.'
+        });
       });
   }
 });
@@ -46,3 +44,5 @@ router.delete('/:id', (req, res) => {
       res.status(500).json({ message: 'The landowner could not be removed' });
     });
 });
+
+module.exports = router;

@@ -21,10 +21,33 @@ describe('register', function() {
         expect(res.status).toBe(201);
       });
   });
+
   it('should return JSON object', async () => {
     const res = await request(server)
       .post('/api/auth/rvowners/register')
-      .send({ email: 'testemail@testing.com', password: 'testing' });
+      .send({ email: 'test@email.com', password: 'test' });
+
+    expect(res.type).toMatch(/json/i);
+  });
+});
+
+describe('login', function() {
+  it('should return status 200', function() {
+    return request(server)
+      .post('/api/auth/rvowners/login')
+      .send({
+        username: 'angus young',
+        password: 'acdc'
+      })
+      .then(res => {
+        expect(res.status).toBe(401);
+      });
+  });
+
+  it('should return JSON object', async () => {
+    const res = await request(server)
+      .post('/api/auth/rvowners/login')
+      .send({ email: 'test@emial.com', password: 'test' });
 
     expect(res.type).toMatch(/json/i);
   });

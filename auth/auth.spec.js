@@ -12,9 +12,20 @@ describe('register', function() {
   it('should return 201', function() {
     return request(server)
       .post('/api/auth/rvowners/register')
-      .send({ username: 'jon snow', password: 'pass', email: 'test@email.com' })
+      .send({
+        username: 'angus young',
+        password: 'acdc',
+        email: 'ay@email.com'
+      })
       .then(res => {
         expect(res.status).toBe(201);
       });
+  });
+  it('should return JSON object', async () => {
+    const res = await request(server)
+      .post('/api/auth/rvowners/register')
+      .send({ email: 'testemail@testing.com', password: 'testing' });
+
+    expect(res.type).toMatch(/json/i);
   });
 });

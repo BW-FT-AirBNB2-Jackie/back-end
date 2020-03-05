@@ -93,7 +93,11 @@ Gets a list of landowners. You probably wont need this but this is the baseURL f
 
 ### Deletes the landowner with that id
 
-## GET /api/landowners/:id/listings
+## GET /api/landowners/:id/listings++
+
+# LISTINGS endpoints:
+
+## GET api/listings/
 
 ### Gets the all the listings
 
